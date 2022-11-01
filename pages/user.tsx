@@ -17,13 +17,9 @@ interface IUserPageProps {
     auth: boolean
 }
 
-const UserPage: NextPage<IUserPageProps> = ({ auth }) => {
+const UserPage: NextPage<IUserPageProps> = () => {
     const router = useRouter()
-    const { setLocalAuthentication, setUser } = useAuth()
-
-    useEffect(() => {
-        setLocalAuthentication(auth)
-    }, [auth])
+    const { isAuthenticated, setLocalAuthentication, setUser } = useAuth()
 
     useEffect(() => {
         async function resolve() {
@@ -34,10 +30,10 @@ const UserPage: NextPage<IUserPageProps> = ({ auth }) => {
             } catch (error) {}
         }
 
-        auth && resolve()
-    }, [auth, setUser])
+        isAuthenticated && resolve()
+    }, [])
 
-    if (!auth) {
+    if (!isAuthenticated) {
         return (
             <Grid className={styles.no_user}>
                 <UserIcon size={100} />
@@ -68,11 +64,3 @@ const UserPage: NextPage<IUserPageProps> = ({ auth }) => {
 }
 
 export default UserPage
-export const getServerSideProps = async (ctx: NextPageContext) => {
-    // @ts-ignore
-    const { AJWT } = ctx.req.cookies
-
-    return {
-        props: { auth: AJWT ? true : false },
-    }
-}
