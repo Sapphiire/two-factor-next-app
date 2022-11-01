@@ -21,7 +21,7 @@ const UserInfo: React.FC = () => {
     return (
         <Grid.Container gap={1}>
             {Object.entries(user).map(([key, value]) => (
-                <Grid xs={24}>
+                <Grid key={key} xs={24}>
                     <Input
                         icon={ICON_BY_FIELD[key]}
                         readOnly={true}

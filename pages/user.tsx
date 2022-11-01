@@ -23,7 +23,7 @@ const UserPage: NextPage<IUserPageProps> = ({ auth }) => {
 
     useEffect(() => {
         setLocalAuthentication(auth)
-    }, [])
+    }, [auth])
 
     useEffect(() => {
         async function resolve() {
@@ -35,7 +35,7 @@ const UserPage: NextPage<IUserPageProps> = ({ auth }) => {
         }
 
         auth && resolve()
-    }, [])
+    }, [auth, setUser])
 
     if (!auth) {
         return (
