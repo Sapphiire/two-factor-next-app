@@ -1,0 +1,40 @@
+[
+    {
+        "id": "26e84cee-7cec-4587-b0ba-34eaadbb2e12",
+        "twoFA": true,
+        "email": "1@mail.ru",
+        "password": "$2a$10$QJOLTZYKBbKeJE9TxuOmQOhdPtPYePNOP6rLDAaru1il3QZnkbzvu",
+        "name": "John Doe 2",
+        "otpSecret": "BR7EICITBVQQCAD4"
+    },
+    {
+        "id": "f7263816-0599-42b7-b797-96357133dceb",
+        "twoFA": false,
+        "email": "12@mail.ru",
+        "password": "$2a$10$OfFR4WVLnSl/S7siVtSJWeU56cmm4aZB9Ifrpkax3Hu7PbZ8Su1M2",
+        "name": "Vadzim Zakharov",
+        "otpSecret": null
+    },
+    {
+        "id": "a703ab55-80a6-4aab-a875-ddcf82b6210b",
+        "twoFA": false,
+        "email": "123@mail.ru",
+        "password": "$2a$10$zQwT2gsxFn83UMy/0hCmAuV0qj901hzE38CA3bKDYx71vqGJ0wrS6"
+    },
+    {
+        "id": "ed6be247-30ce-46ef-8af2-5f060ec91c2e",
+        "twoFA": true,
+        "email": "zakharovvadzim@yandex.by",
+        "password": "$2a$10$lPTurMmWGrbZrOfOZBfQUudjHYflasYx0L.LqZn90Hd1Ad5braHmu",
+        "name": "",
+        "otpSecret": null
+    },
+    {
+        "id": "8ab5534d-0916-4f90-9776-2cffe879d6af",
+        "twoFA": true,
+        "email": "zakharovvadzim@gmail.com",
+        "password": "$2a$10$xxdOOfUQX3QvS.smNQqPoeJhdX/O6QAwwlpkU8TablMwoo4TIFsOW",
+        "name": "",
+        "otpSecret": "HAPHUQAACVDDSKJ3"
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "id": "26e84cee-7cec-4587-b0ba-34eaadbb2e12",
+        "twoFA": true,
+        "email": "1@mail.ru",
+        "password": "$2a$10$QJOLTZYKBbKeJE9TxuOmQOhdPtPYePNOP6rLDAaru1il3QZnkbzvu",
+        "name": "John Doe 2",
+        "otpSecret": "BR7EICITBVQQCAD4"
+    },
+    {
+        "id": "f7263816-0599-42b7-b797-96357133dceb",
+        "twoFA": true,
+        "email": "12@mail.ru",
+        "password": "$2a$10$OfFR4WVLnSl/S7siVtSJWeU56cmm4aZB9Ifrpkax3Hu7PbZ8Su1M2",
+        "name": "Vadzim"
+    },
+    {
+        "id": "d4afc727-f124-40cb-add4-65a1df3967df",
+        "twoFA": false,
+        "email": "123@mail.ru",
+        "password": "$2a$10$WDUi9QI4zOOkP9kN//GpC.yIM/yJEW/nvqRRiSKgXEBX2CcI00egy"
+    }
+]

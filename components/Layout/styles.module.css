@@ -1,0 +1,15 @@
+.container {
+    height: max-content;
+    max-width: 660px;
+    margin: 0 auto !important;
+    width: 100%;
+}
+
+.tabs {
+    width: calc(25%);
+    margin-block: 50px 40px !important;
+}
+
+.body {
+    width: 100%;
+}
