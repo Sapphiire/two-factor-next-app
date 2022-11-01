@@ -4,8 +4,6 @@ import { genSalt, hash } from 'bcryptjs'
 
 import type { User } from '~/model/User'
 
-let users = require('db/users.json')
-
 type CreateUserDto = {
     email: string
     password: string
@@ -17,15 +15,15 @@ class UserRepositoryClass {
     private users: User[]
 
     constructor() {
-        this.users = users
+        this.users = []
     }
 
     public async findBy(body: string, by: string) {
-        return this.users.find((user: User) => user[by] === body)
+        return this.users.find((user) => user[by] === body)
     }
 
     public async findById(id: string) {
-        return this.users.find((user: User) => user.id === id)
+        return this.users.find((user) => user.id === id)
     }
 
     public async create(createUser: CreateUserDto) {
@@ -33,7 +31,6 @@ class UserRepositoryClass {
         const user = { id: v4(), twoFA: false, ...createUser, password }
 
         this.users.push(user)
-        this.save()
 
         return user
     }
@@ -47,21 +44,16 @@ class UserRepositoryClass {
 
         const password = updateUser.password
             ? await this.hashPassword(updateUser.password)
-            : users[idx].password
+            : this.users[idx].password
 
-        users[idx] = { ...users[idx], ...updateUser, password }
-        this.save()
+        this.users[idx] = { ...this.users[idx], ...updateUser, password }
 
-        return users[idx]
+        return this.users[idx]
     }
 
     private async hashPassword(password: string) {
         const salt = await genSalt(10)
         return await hash(password, salt)
-    }
-
-    private async save() {
-        fs.writeFileSync('db/users.json', JSON.stringify(this.users, null, 4))
     }
 }
 
