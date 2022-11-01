@@ -18,12 +18,3 @@ const HomePage: NextPage = () => (
 )
 
 export default HomePage
-
-export const getServerSideProps = async (ctx: NextPageContext) => {
-    // @ts-ignore
-    const { AJWT } = ctx.req.cookies
-
-    return {
-        props: { auth: AJWT ? true : false },
-    }
-}
