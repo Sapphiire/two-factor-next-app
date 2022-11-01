@@ -14,7 +14,6 @@ class AuthServiceClass {
         const token = await JwtService.signJwt(String(user.id))
         return serialize(COOKIE_NAME, token, {
             httpOnly: true,
-            secure: NODE_ENV !== 'development',
             maxAge: 60 * 60 * 24 * 30,
             sameSite,
             path: '/',

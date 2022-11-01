@@ -1,6 +1,5 @@
-import fs from 'fs'
 import { v4 } from 'uuid'
-import { genSalt, hash } from 'bcryptjs'
+import { hashSync } from 'bcryptjs'
 
 import type { User } from '~/model/User'
 
@@ -15,7 +14,15 @@ class UserRepositoryClass {
     private users: User[]
 
     constructor() {
-        this.users = []
+        this.users = [
+            {
+                id: v4(),
+                name: 'Vadzim Zakharov',
+                email: 'zakharovvadzim@yandex.by',
+                password: this.hashPassword('123'),
+                twoFA: false,
+            },
+        ]
     }
 
     public async findBy(body: string, by: string) {
@@ -51,9 +58,8 @@ class UserRepositoryClass {
         return this.users[idx]
     }
 
-    private async hashPassword(password: string) {
-        const salt = await genSalt(10)
-        return await hash(password, salt)
+    private hashPassword(password: string) {
+        return hashSync(password, 10)
     }
 }
 

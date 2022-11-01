@@ -19,7 +19,7 @@ interface IUserPageProps {
 
 const UserPage: NextPage<IUserPageProps> = () => {
     const router = useRouter()
-    const { isAuthenticated, setLocalAuthentication, setUser } = useAuth()
+    const { isAuthenticated, setUser } = useAuth()
 
     useEffect(() => {
         async function resolve() {
@@ -31,7 +31,7 @@ const UserPage: NextPage<IUserPageProps> = () => {
         }
 
         isAuthenticated && resolve()
-    }, [])
+    }, [isAuthenticated])
 
     if (!isAuthenticated) {
         return (

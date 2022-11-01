@@ -38,7 +38,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
             const otpToken = otp.generate(otpSecret)
 
-            mailer.post('send', { version: 'v3.1' }).request({
+            await mailer.post('send', { version: 'v3.1' }).request({
                 Messages: [
                     {
                         From: {
