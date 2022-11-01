@@ -62,19 +62,15 @@ const VerifyForm: React.FC<IVerifyFormProps> = ({ userId, onSubmit }) => {
                 onChange={formik.handleChange}
             />
             <Spacer h={1} />
-            <Grid.Container justify="space-between">
-                <Button htmlType="submit" icon={<Mail />} loading={loading}>
-                    Resend
-                </Button>
-                <Button
-                    htmlType="submit"
-                    type="success-light"
-                    icon={<LogIn />}
-                    loading={loading}
-                >
-                    Sign In
-                </Button>
-            </Grid.Container>
+            <Button
+                htmlType="submit"
+                type="success-light"
+                width="100%"
+                icon={<LogIn />}
+                loading={loading}
+            >
+                Sign In
+            </Button>
         </form>
     )
 }
